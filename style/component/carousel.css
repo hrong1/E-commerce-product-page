@@ -1,0 +1,104 @@
+.carousel {
+    width: 100%;
+}
+
+.carousel__main-image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel__slider {
+    display: flex;
+    transition: transform var(--animeation-time) ease;
+}
+
+.carousel__slide {
+    flex-basis: 100%;
+    flex-shrink: 0;
+}
+
+.carousel__slider-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    cursor: pointer;
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: color var(--animeation-time);
+}
+
+.carousel__arrow:hover {
+    background-color: var(--color-grayish-blue);
+}
+
+.carousel__arrow--next {
+    right: 0;
+}
+
+.carousel__thumbnail-container {
+    justify-content: space-between;
+    margin-top: var(--font-size-base);
+    display: none;
+}
+
+.carousel__thumbnail-button {
+    border: solid transparent;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    overflow: hidden;
+    background: none;
+}
+
+.carousel__thumbnail-button:hover img{
+    opacity: var(--default-opacity);
+}
+
+.carousel__thumbnail-button.active img{
+    border-color: var(--color-orange);
+    opacity: var(--default-opacity);
+}
+
+.carousel__thumbnail-button.active {
+    border-color: var(--color-orange);
+}
+
+.carousel__thumbnail {
+    width: 100%;
+    display: block;
+    transition: opacity var(--animeation-time) ease;
+}
+
+.lightbox {
+    display: none;
+}
+
+@media screen and (min-width: 50rem) {
+    .product-display .carousel .carousel__arrow {
+        display: none;
+    }
+
+    .carousel__main-image-container {
+        border-radius: var(--border-radius);
+    }
+
+    .carousel__thumbnail-container {
+        display: flex;
+    }
+
+    .carousel__thumbnail-button {
+        width: 20%;
+        border-width: var(--thumbnail-border-width);
+    }
+}

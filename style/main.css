@@ -1,0 +1,8 @@
+@import './global.css';
+@import './setup.css';
+@import './footer.css';
+@import './component/header.css';
+@import './component/sidebar.css';
+@import './component/carousel.css';
+@import './component/product-info.css';
+@import './component/cart-card.css';

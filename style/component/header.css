@@ -1,0 +1,99 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content:space-between;
+    padding: var(--spacing-sm) var(--spacing-unit);
+    position: sticky;
+    top: 0;
+    background-color: var(--color-white);
+    z-index: 98;
+}
+
+.header__sidebar-toggle {
+    display: flex;
+    z-index: 101;
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    background-image: url('/images/icon-menu.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.header__avatar {
+    width: var(--avatar-width);
+    height: var(--avatar-width);
+    border-radius: 50%;
+}
+
+.header__left,
+.header__right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    gap: var(--spacing-unit);
+}
+
+.header__cart-toggle {
+    position: relative;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.header__cart-toggle.is-fill::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    content: attr(data-cart-count);
+    background-color: var(--color-orange);
+    min-width: var(--notify-width);
+    height: var(--notify-height);
+    padding: 0 var(--spacing-sm);
+    transform: translate(50%, -50%);
+    border-radius: var(--border-radius-capsule);
+}
+
+.header__avatar {
+    cursor: pointer;
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+    border: solid transparent;
+}
+
+.header__avatar:hover {
+    border: solid var(--color-orange);
+}
+
+@media screen and (min-width: 50rem) {
+    .header__sidebar-toggle {
+        display: none;
+    }
+
+    .header__right {
+        gap: var(--spacing-md)
+    }
+
+    .header__left {
+        align-self: stretch;
+        gap: var(--spacing-ex-lg);
+    }
+
+    .header {
+        display: flex;
+        padding: 0;
+        min-height: calc(var(--spacing-md) * 3);
+        border-bottom: solid var(--color-grayish-blue);
+    }
+}

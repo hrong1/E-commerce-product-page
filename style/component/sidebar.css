@@ -1,0 +1,94 @@
+.header__sidebar-list {
+    position: fixed;
+    background-color: var(--color-white);
+    width: 75%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: var(--spacing-unit);
+    display: flex;
+    flex-direction: column;
+    padding-top: calc(var(--spacing-lg) * 2);
+    gap: var(--spacing-unit);
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform var(--animeation-time) ease-in-out;
+}
+
+.header__sidebar-list li a{
+    text-decoration: none;
+    font-weight: var(--bold-weight);
+    color: var(--color-very-dark-blue);
+    transition: color var(--animeation-time) ease-in-out;
+}
+
+.header__sidebar-list li a:hover{
+    color: var(--color-orange);
+}
+
+.header__sidebar-list li {
+    list-style: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: var(--color-black-75-opacity);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--animeation-time) ease-in-out;
+}
+
+/* sidebar open  */
+.header.is-open .overlay{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.header.is-open .header__sidebar-list {
+    transform: translateX(0%);
+}
+
+.header.is-open .header__sidebar-toggle {
+    background-image: url('/images/icon-close.svg');
+}
+
+@media screen and (min-width: 50rem) {
+    .header__sidebar {
+        height: 100%;
+    }
+
+    .header__sidebar-list {
+        position: static;
+        transform: none;
+        height: 100%;
+        width: auto;
+        flex-direction: row;
+        padding: 0;
+        background-color: transparent;
+        gap: var(--spacing-lg);
+    }
+
+    .header__sidebar-list li {
+        display: flex;
+        height: 100%;
+    }
+
+    .header__sidebar-list li a{
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        height: 100%;
+        transition: border 0.3s ease-in-out;
+        border-bottom: var(--border-height) solid transparent;
+    }
+
+    .header__sidebar-list li a:hover {
+        border-bottom-color: var(--color-orange);
+        color: var(--color-very-dark-blue);
+    }
+}

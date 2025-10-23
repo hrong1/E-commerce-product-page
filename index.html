@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header__left">
+      <button class="header__sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation"></button>
+    
+      <img class="header__logo" src="./images/logo.svg" alt="Logo for Sneaker Company">
+
+      <nav class="header__sidebar" id="sidebar">
+        <ul class="header__sidebar-list">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="cart-card" id="cart">
+      <h3 class="cart-card__title">Cart</h3>
+      <div class="cart-card__body">
+        <div class="cart-card__empty">
+          Your cart is empty
+        </div>
+        <div class="cart-card__fill">
+          <div class="cart-card__item">
+            <img class="cart-card__item-img" src="./images/image-product-1-thumbnail.jpg" alt="">
+            <div class="cart-card__item-info">
+              <p class="cart-card__item-name">
+              Fall Limited Edition Sneakers
+              </p>
+              <div class="cart-card__price-info">
+                <span class="cart-card__item-price">$125.00</span>
+                <span class="cart-card__item-number" id="item-number">× N/A</span>
+                <span class="cart-card__total-price" id="total-price">N/A</span>
+              </div>
+            </div>
+            <button class="cart-card__delete-button" id="delete-button" aria-label="delete cart item">
+              <img class="cart-card__delete-icon" src="./images/icon-delete.svg" alt="">
+            </button>
+          </div>
+          <button class="cart-card__checkout-button" id="checkout-button" aria-label="checkout item"> 
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__right">
+      <button class="header__cart-toggle" id="cartToggle" aria-controls="cart" data-cart-count="">
+        <img class="header__cart" src="./images/icon-cart.svg" alt="shop cart">
+      </button>
+      <img class="header__avatar" src="./images/image-avatar.png" alt="your avatar">
+    </div>
+    <div class="overlay" id="overlay"></div>
+  </header>
+  <main>
+    <div class="product-display" id="product-display">
+      <div class="carousel">
+        <div class="carousel__main-image-container">
+          <div class="carousel__slider">
+            <div class="carousel__slide">
+              <img 
+                class="carousel__slider-image" 
+                src="./images/image-product-1.jpg" 
+                alt="A pair of white and beige low-top sneakers with white laces and orange detail on the heel, displayed on a two-tone orange and beige background.">
+            </div>
+            <div class="carousel__slide">
+              <img 
+                src="./images/image-product-2.jpg" 
+                alt="A pair of beige and white sneakers with orange heel accents displayed on stacked white stones and a dry branch against an orange and white background." 
+                class="carousel__slider-image">
+            </div>
+            <div class="carousel__slide">
+              <img 
+                src="./images/image-product-3.jpg" 
+                alt="A pair of sneakers resting on a stack of rocks against a natural background." 
+                class="carousel__slider-image">
+            </div>
+            <div class="carousel__slide">
+              <img 
+                src="./images/image-product-4.jpg" 
+                alt="A pair of white sneakers positioned on a rock stack, highlighting a blend of fashion and nature." 
+                class="carousel__slider-image">
+              </div>
+          </div>
+            <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="previous image">
+              <img class="carousel__arrow-icon" src="./images/icon-previous.svg" alt="">            
+            </button>
+            <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="next image">
+              <img class="carousel__arrow-icon" src="./images/icon-next.svg" alt="">
+            </button>
+        </div>
+
+        <div class="carousel__thumbnail-container">
+          <button type="button" class="carousel__thumbnail-button" aria-label="View image 1">
+            <img 
+              src="./images/image-product-1-thumbnail.jpg" 
+              alt="" 
+              class="carousel__thumbnail" >
+          </button>
+          <button type="button" class="carousel__thumbnail-button" aria-label="View image 2">
+            <img 
+              src="./images/image-product-2-thumbnail.jpg" 
+              alt="" 
+              class="carousel__thumbnail">
+          </button>
+          <button type="button" class="carousel__thumbnail-button" aria-label="View image 3">
+            <img 
+              src="./images/image-product-3-thumbnail.jpg" 
+              alt="" 
+              class="carousel__thumbnail">
+          </button>
+          <button type="button" class="carousel__thumbnail-button" aria-label="View image 4">
+            <img 
+              src="./images/image-product-4-thumbnail.jpg" 
+              alt="" 
+              class="carousel__thumbnail">
+          </button>
+        </div>
+      </div>
+    </div>
+    <section class="product-info">
+      <p class="product-info__company">Sneaker Company</p>
+      <h1 class="product-info__product-name">Fall Limited Edition Sneakers</h1>
+      <p class="product-info__product-description">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      <div class="product-info__price">
+        <div class="product-info__new-price">
+          <span class="product-info__price-now">$125.00</span>
+          <span class="product-info__price-off">50%</span>
+        </div>
+        <s class="product-info__price-original">$250.00</s>
+      </div>
+      <div class="product-info__actions">
+        <div class="product-info__controls">
+          <button class="product-info__quantity-btn" type="button" id="minus-product" aria-label="Decrease quantity">
+            <img class="product-info__minus-button-img" src="./images/icon-minus.svg" alt="">
+          </button>
+          <span class="product-info__current" id="number-select">0</span>
+          <button class="product-info__quantity-btn" type="button" id="add-product" aria-label="Increase quantity">
+            <img class="product-info__add-button-img" src="./images/icon-plus.svg" alt="">
+          </button>
+        </div>
+        <button class="product-info__button" type="button" id="add-to-cart">
+          <img class="product-info__cart" src="./images/icon-cart.svg" alt="">
+          Add to cart
+        </button>
+      </div>
+    </section>
+  </main>
+  
+  <div class="lightbox" id="lightbox">
+      <div class="carousel">
+        <div class="carousel__main-image-container">
+          <div class="carousel__slider">
+            <div class="carousel__slide">
+              <img 
+                class="carousel__slider-image" 
+                src="./images/image-product-1.jpg" 
+                alt="A pair of white and beige low-top sneakers with white laces and orange detail on the heel, displayed on a two-tone orange and beige background.">
+            </div>
+            <div class="carousel__slide">
+              <img 
+                src="./images/image-product-2.jpg" 
+                alt="A pair of beige and white sneakers with orange heel accents displayed on stacked white stones and a dry branch against an orange and white background." 
+                class="carousel__slider-image">
+            </div>
+            <div class="carousel__slide">
+              <img 
+                src="./images/image-product-3.jpg" 
+                alt="A pair of sneakers resting on a stack of rocks against a natural background." 
+                class="carousel__slider-image">
+            </div>
+            <div class="carousel__slide">
+              <img 
+                src="./images/image-product-4.jpg" 
+                alt="A pair of white sneakers positioned on a rock stack, highlighting a blend of fashion and nature." 
+                class="carousel__slider-image">
+              </div>
+          </div>
+            <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="previous image">
+              <img class="carousel__arrow-icon" src="./images/icon-previous.svg" alt="">            
+            </button>
+            <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="next image">
+              <img class="carousel__arrow-icon" src="./images/icon-next.svg" alt="">
+            </button>
+        </div>
+
+        <div class="carousel__thumbnail-container">
+          <button type="button" class="carousel__thumbnail-button" aria-label="View image 1">
+            <img 
+              src="./images/image-product-1-thumbnail.jpg" 
+              alt="" 
+              class="carousel__thumbnail" >
+          </button>
+          <button type="button" class="carousel__thumbnail-button" aria-label="View image 2">
+            <img 
+              src="./images/image-product-2-thumbnail.jpg" 
+              alt="" 
+              class="carousel__thumbnail">
+          </button>
+          <button type="button" class="carousel__thumbnail-button" aria-label="View image 3">
+            <img 
+              src="./images/image-product-3-thumbnail.jpg" 
+              alt="" 
+              class="carousel__thumbnail">
+          </button>
+          <button type="button" class="carousel__thumbnail-button" aria-label="View image 4">
+            <img 
+              src="./images/image-product-4-thumbnail.jpg" 
+              alt="" 
+              class="carousel__thumbnail">
+          </button>
+        </div>
+      </div>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/hrong1/E-commerce-product-page"
+    target="_blank">Haorong Rong</a>.
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
