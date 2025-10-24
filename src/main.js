@@ -4,6 +4,7 @@ import { sidebarToggle } from "./sidebar-toggle.js";
 import { addProduct, minusProduct } from "./product-quantity.js";
 import { addToCart, toggleCart, cartCheckOut, emptyCart } from "./cart.js";
 import { Carousel } from "./carousel.js";
+import { lightboxToggle } from "./lightbox.js";
 // Get element
 const sidebarButton = document.getElementById('sidebarToggle');
 const overlay = document.getElementById('overlay');
@@ -19,6 +20,9 @@ const cart = document.getElementById('cart');
 
 const productDisplay = document.getElementById('product-display');
 const lightbox = document.getElementById('lightbox');
+const mainImage = document.getElementById('main-image');
+const lightboxOverlay = document.getElementById('lightbox-overlay');
+const lightboxClose = document.getElementById('lightbox-close');
 
 sidebarButton.addEventListener('click', sidebarToggle);
 overlay.addEventListener('click', sidebarToggle);
@@ -44,4 +48,6 @@ document.addEventListener('click', (event) => {
 new Carousel(productDisplay);
 new Carousel(lightbox);
 
-
+mainImage.addEventListener('click', lightboxToggle);
+lightboxOverlay.addEventListener('click', lightboxToggle);
+lightboxClose.addEventListener('click', lightboxToggle);

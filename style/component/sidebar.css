@@ -71,6 +71,7 @@
         padding: 0;
         background-color: transparent;
         gap: var(--spacing-lg);
+        z-index: auto;
     }
 
     .header__sidebar-list li {
@@ -91,4 +92,5 @@
         border-bottom-color: var(--color-orange);
         color: var(--color-very-dark-blue);
     }
+
 }
